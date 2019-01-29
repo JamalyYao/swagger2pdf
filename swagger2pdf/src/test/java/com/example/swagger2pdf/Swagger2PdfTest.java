@@ -53,11 +53,12 @@ public class Swagger2PdfTest {
                 .andExpect(status().isOk())
                 .andReturn();
         MockHttpServletResponse response = mvcResult.getResponse();
-        String swaggerJson = response.getContentAsString();
+
+//        String swaggerJson = response.getContentAsString();
         
         // 这里是生成指定项目的swagger.json(指定的项目必须已经启动)
-       /* String url = "http://ip:port/v2/api-docs"; // ip和port换成自己项目的
-        String swaggerJson = sendGet(url);*/
+        String url = "http://127.0.0.1:9999/admin/v2/api-docs"; // ip和port换成自己项目的
+        String swaggerJson = sendGet(url);
         
         logger.info("swagger json为：{}", swaggerJson);
         Files.createDirectories(Paths.get(outputDir));
