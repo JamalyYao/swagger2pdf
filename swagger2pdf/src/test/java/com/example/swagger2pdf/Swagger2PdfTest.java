@@ -52,8 +52,9 @@ public class Swagger2PdfTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andReturn();
-        MockHttpServletResponse response = mvcResult.getResponse();
 
+        // 例子
+//        MockHttpServletResponse response = mvcResult.getResponse();
 //        String swaggerJson = response.getContentAsString();
         
         // 这里是生成指定项目的swagger.json(指定的项目必须已经启动)
